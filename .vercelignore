@@ -24,10 +24,3 @@ target/
 # node:test suite (production env + Sentry) on every request (WORLDMONITOR-VD).
 # Guarded by tests/deploy-config.test.mjs.
 api/**/*.test.mjs
-
-# CAK3Dmonitor (Vercel Hobby plan): the /api/mcp edge function bundles to
-# ~1.02 MB, over the plan's 1 MB edge-function limit, which fails the whole
-# deploy. It's the AI-agent MCP connector, not part of the dashboard, so this
-# deployment leaves the route entry out. The shared ./mcp/ helpers stay, since
-# other functions import them.
-api/mcp.ts
